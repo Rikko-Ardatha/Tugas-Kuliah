@@ -71,6 +71,31 @@
     
     
       
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-XXXXXXXX-X", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -201,6 +226,8 @@
       
         
       
+        
+      
     </ul>
   </div>
 </nav>
@@ -271,8 +298,20 @@
 
 
   <li class="md-nav__item">
-    <a href="Menghitung%20Nilai%20e%5E2x/" title="Tugas 1 (Deret Mac Laurent)" class="md-nav__link">
-      Tugas 1 (Deret Mac Laurent)
+    <a href="tugas1/" title="Tugas 1 (Deret Mac Laurin)" class="md-nav__link">
+      Tugas 1 (Deret Mac Laurin)
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="tugas2/" title="Tugas 2 (Newton Raphson)" class="md-nav__link">
+      Tugas 2 (Newton Raphson)
     </a>
   </li>
 
@@ -305,9 +344,9 @@
               
                 
                 
-                <h1 id="selamat-datang-di-halaman-web">Selamat Datang Di Halaman Web</h1>
-<h1 id="rikko-ardatha-p-p">Rikko Ardatha P P</h1>
-<h2 id="profil-singkat"><strong>Profil Singkat</strong></h2>
+                <h1 id="selamat-datang-di-halaman-web">Selamat Datang Di Halaman Web<a class="headerlink" href="#selamat-datang-di-halaman-web" title="Permanent link">&para;</a></h1>
+<h1 id="rikko-ardatha-p-p">Rikko Ardatha P P<a class="headerlink" href="#rikko-ardatha-p-p" title="Permanent link">&para;</a></h1>
+<h2 id="profil-singkat"><strong>Profil Singkat</strong><a class="headerlink" href="#profil-singkat" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Nama : Rikko Ardatha Putra Purwanto</li>
 <li>NIM : 180411100086</li>
@@ -337,13 +376,13 @@
       <nav class="md-footer-nav__inner md-grid">
         
         
-          <a href="Menghitung%20Nilai%20e%5E2x/" title="Tugas 1 (Deret Mac Laurent)" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="tugas1/" title="Tugas 1 (Deret Mac Laurin)" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Tugas 1 (Deret Mac Laurent)
+                Tugas 1 (Deret Mac Laurin)
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -381,6 +420,10 @@
       <script src="assets/javascripts/application.df00da5d.js"></script>
       
       <script>app.initialize({version:"1.1",url:{base:"."}})</script>
+      
+        <script src="javascripts/extra.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
     
   </body>
